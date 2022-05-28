@@ -15,11 +15,6 @@ ClapTrap::~ClapTrap( void )
     std::cout << "Standard deconstructor called" << std::endl;
 }
 
-void ClapTrap::setName( std::string newName )
-{
-    this->_name = newName;
-}
-
 int ClapTrap::getHp( void )
 {
     return (this->_hp);
@@ -38,6 +33,26 @@ std::string ClapTrap::getName( void )
 int ClapTrap::getAd( void )
 {
     return (this->_ad);
+}
+
+void ClapTrap::setHp( int hp )
+{
+    this->_hp = hp;
+}
+
+void ClapTrap::setAd( int ad )
+{
+    this->_ad = ad;
+}
+
+void ClapTrap::setName( std::string newName )
+{
+    this->_name = newName;
+}
+
+void ClapTrap::setEnergy( int energy )
+{
+    this->_energy = energy;
 }
 
 void ClapTrap::attack( const std::string& target )

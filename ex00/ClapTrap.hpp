@@ -15,8 +15,11 @@ public:
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
     int getHp( void );
+    void setHp( int hp );
     int getEnergy( void );
+    void setEnergy( int energy );
     int getAd( void );
+    void setAd( int ad );
     void setName( std::string newName );
     std::string getName( void );
 
