@@ -9,7 +9,7 @@ RM				= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -I.
 CPP_FLAGS       = -std=c++98
 
-NAME			= ClapTrap
+NAME			= ScavTrap
 
 all:			$(NAME)
 
