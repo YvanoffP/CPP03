@@ -10,19 +10,24 @@ public:
 
     ClapTrap( void );
     ClapTrap( std::string newName);
+    ClapTrap( const ClapTrap &copy );
     ~ClapTrap( void );
+
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-    int getHp( void );
+
+    int getHp( void ) const;
+    int getEnergy( void ) const;
+    int getAd( void ) const;
+    std::string getName( void ) const;
+
     void setHp( int hp );
-    int getEnergy( void );
     void setEnergy( int energy );
-    int getAd( void );
     void setAd( int ad );
     void setName( std::string newName );
-    std::string getName( void );
 
+    void useEnergy( void );
 
 private:
 

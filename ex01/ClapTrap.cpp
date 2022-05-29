@@ -10,27 +10,35 @@ ClapTrap::ClapTrap( std::string newName ): _name(newName),  _hp(10), _energy(10)
     std::cout << "Name construcor called" << std::endl;
 }
 
-ClapTrap::~ClapTrap( void )
+ClapTrap::ClapTrap( const ClapTrap &copy ): _name(copy.getName()),
+                                            _hp(copy.getHp()),
+                                            _energy(copy.getEnergy()),
+                                            _ad(copy.getAd())
 {
-    std::cout << "Standard deconstructor called" << std::endl;
+    std::cout << "ClapTrap " << this->getName() << " copy constructor called" << std::endl;
 }
 
-int ClapTrap::getHp( void )
+ClapTrap::~ClapTrap( void )
+{
+    std::cout << "Standard ClapTrap deconstructor called" << std::endl;
+}
+
+int ClapTrap::getHp( void ) const
 {
     return (this->_hp);
 }
 
-int ClapTrap::getEnergy( void )
+int ClapTrap::getEnergy( void ) const
 {
     return (this->_energy);
 }
 
-std::string ClapTrap::getName( void )
+std::string ClapTrap::getName( void ) const
 {
     return (this->_name);
 }
 
-int ClapTrap::getAd( void )
+int ClapTrap::getAd( void ) const
 {
     return (this->_ad);
 }
@@ -94,4 +102,9 @@ void ClapTrap::beRepaired( unsigned int amount )
     }
     else
         std::cout << "ClapTrap " << this->getName() << " is already at max hp (10) !" << std::endl;
+}
+
+void ClapTrap::useEnergy( void )
+{
+    this->_energy--;
 }
