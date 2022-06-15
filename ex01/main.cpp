@@ -5,6 +5,7 @@ int main( void )
 {
 
 	ClapTrap clap("Guit");
+    std::cout << "Creation du ScavTrap : " << std::endl;
 	ScavTrap scav("Yvanoff");
 
 
@@ -41,10 +42,9 @@ int main( void )
 	scav.attack("Mama");
 	scav.attack("Mama");
 	scav.beRepaired(20);
-	scav.attack("Mama");
-	scav.attack("Mama");
-	scav.attack("Mama");
-	scav.attack("Mama");
-
+    /*for (int i = 0; i < 55; i++)
+    {
+        scav.attack("Mama");
+    }*/
 	return (0);
 }

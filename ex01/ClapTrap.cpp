@@ -2,12 +2,12 @@
 
 ClapTrap::ClapTrap( void ): _hp(10), _energy(10), _ad(0)
 {
-    std::cout << "Void constructor called" << std::endl;
+    std::cout << "ClapTrap Void constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string newName ): _name(newName),  _hp(10), _energy(10), _ad(0)
 {
-    std::cout << "Name construcor called" << std::endl;
+    std::cout << "ClapTrap Name construcor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &copy ): _name(copy.getName()),
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap( const ClapTrap &copy ): _name(copy.getName()),
 
 ClapTrap::~ClapTrap( void )
 {
-    std::cout << "Standard ClapTrap deconstructor called" << std::endl;
+    std::cout << "Standard ClapTrap destructor called" << std::endl;
 }
 
 int ClapTrap::getHp( void ) const
@@ -94,14 +94,9 @@ void ClapTrap::takeDamage( unsigned int amount )
 
 void ClapTrap::beRepaired( unsigned int amount )
 {
-    if (this->getHp() < 10)
-    {
-        this->_hp = (this->getHp() + (int)amount) > 10 ? 10 : (this->getHp() + (int)amount);
-        std::cout << "ClapTrap " << this->getName() << " has been repaired for : " << amount << "! His current hp is :"
-            << this->getHp() << std::endl;
-    }
-    else
-        std::cout << "ClapTrap " << this->getName() << " is already at max hp (10) !" << std::endl;
+    this->_hp = this->getHp() + (int)amount;
+    std::cout << "ClapTrap " << this->getName() << " has been repaired for : " << amount << "! His current hp is :"
+        << this->getHp() << std::endl;
 }
 
 void ClapTrap::useEnergy( void )

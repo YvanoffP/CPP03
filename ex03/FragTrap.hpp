@@ -8,11 +8,11 @@ class FragTrap: virtual public ClapTrap {
 public :
     FragTrap( void );
     FragTrap( const std::string name );
-    FragTrap( const FragTrap &copy);
+    FragTrap( const FragTrap &copy );
     ~FragTrap( void );
 
     void attack( const std::string &target );
-    void highFivesGuys(void);
+    void highFivesGuys( void );
 };
 
 #endif

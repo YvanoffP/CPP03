@@ -12,7 +12,7 @@ DiamondTrap::DiamondTrap ( const std::string name ): ClapTrap(name + "_clap_name
 	this->setAd(30);
 }
 
-DiamondTrap::DiamondTrap ( const DiamondTrap &copy ): ClapTrap(copy)
+DiamondTrap::DiamondTrap ( const DiamondTrap &copy ): ClapTrap(copy), FragTrap(copy), ScavTrap(copy)
 {
 	std::cout << "DiamondTrap " << _name << " copy constructor called" << std::endl;
 	_name = copy.getName();

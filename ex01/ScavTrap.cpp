@@ -34,7 +34,7 @@ void ScavTrap::attack( const std::string& target )
         this->useEnergy();
         std::cout << "ScavTrap " << this->getName() << " attacks "
             << target << ", causing " << this->getAd()
-            << " points of damage!" << std::endl;
+            << " points of damage! What a hit !" << std::endl;
     }
     else if (getEnergy() == 0)
         std::cout << "ScavTrap " << this ->getName() << " is tired ! No more energy" << std::endl;

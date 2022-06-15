@@ -12,7 +12,7 @@ ClapTrap::ClapTrap( std::string newName ): _name(newName),  _hp(10), _energy(10)
 
 ClapTrap::~ClapTrap( void )
 {
-    std::cout << "Standard deconstructor called" << std::endl;
+    std::cout << "Standard destructor called" << std::endl;
 }
 
 int ClapTrap::getHp( void )

@@ -34,7 +34,7 @@ void FragTrap::attack( const std::string& target )
         this->useEnergy();
         std::cout << "FragTrap " << this->getName() << " attacks "
             << target << ", causing " << this->getAd()
-            << " points of damage!" << std::endl;
+            << " points of damage! Whew, must've hurt!" << std::endl;
     }
     else if (getEnergy() == 0)
         std::cout << "FragTrap " << this ->getName() << " is tired ! No more energy" << std::endl;

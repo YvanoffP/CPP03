@@ -6,15 +6,17 @@
 int main( void )
 {
 
-	ClapTrap clap("Guit");
+	/*ClapTrap clap("Guit");
 	ScavTrap scav("Aspi");
-	FragTrap frag("Jordam");
+	FragTrap frag("Jordam");*/
 	DiamondTrap diamond("Papa");
 
 	diamond.whoAmI();
 	std::cout << diamond.getAd() << std::endl;
 	std::cout << diamond.getEnergy() << std::endl;
 	std::cout << diamond.getHp() << std::endl;
+    diamond.guardGate();
+    diamond.highFivesGuys();
 
 /*	ClapTrap clap("Guit");
 	ScavTrap scav("Yvanoff");

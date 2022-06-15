@@ -8,6 +8,7 @@ int main( void )
     FragTrap frag("Yves");
 
 	frag.highFivesGuys();
+    frag.attack("Le respect");
 
 
 /*	ClapTrap clap("Guit");

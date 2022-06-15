@@ -2,12 +2,12 @@
 
 ClapTrap::ClapTrap( void ): _hp(10), _energy(10), _ad(0)
 {
-    std::cout << "Void constructor called" << std::endl;
+    std::cout << "ClapTrap Void constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string newName ): _name(newName),  _hp(10), _energy(10), _ad(0)
 {
-    std::cout << "Name construcor called" << std::endl;
+    std::cout << "ClapTrap Name construcor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &copy ): _name(copy.getName()),
