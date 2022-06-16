@@ -28,7 +28,7 @@ FragTrap::FragTrap( const FragTrap &copy ): ClapTrap(copy)
 
 FragTrap::~FragTrap( void )
 {
-    std::cout << "Standard FragTrap deconstructor called" << std::endl;
+    std::cout << "Standard FragTrap destructor called" << std::endl;
 }
 
 void FragTrap::attack( const std::string& target )

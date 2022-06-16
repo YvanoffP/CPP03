@@ -21,6 +21,18 @@ ScavTrap::ScavTrap( std::string newName )
 	this->setMaxHp(100);
 }
 
+ScavTrap & ScavTrap::operator=( const ScavTrap &rhs )
+{
+	if (this == &rhs)
+		return (*this);
+    this->setHp(100);
+    this->setAd(20);
+    this->setEnergy(50);
+	this->setType("ScavTrap");
+	this->setMaxHp(100);
+	return (*this);
+}
+
 ScavTrap::ScavTrap( const ScavTrap &copy ): ClapTrap(copy)
 {
     std::cout << this->getType() << " " << this->getName() << " copy constructor called" << std::endl;
@@ -28,7 +40,7 @@ ScavTrap::ScavTrap( const ScavTrap &copy ): ClapTrap(copy)
 
 ScavTrap::~ScavTrap( void )
 {
-    std::cout << "Standard ScavTrap deconstructor called" << std::endl;
+    std::cout << "Standard ScavTrap destructor called" << std::endl;
 }
 
 void ScavTrap::attack( const std::string& target )

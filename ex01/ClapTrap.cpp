@@ -15,22 +15,50 @@ ClapTrap::~ClapTrap( void )
     std::cout << "Standard destructor called" << std::endl;
 }
 
-int ClapTrap::getHp( void )
+ClapTrap & ClapTrap::operator=( const ClapTrap &rhs )
+{
+	if (this == &rhs)
+		return (*this);
+	this->_hp = 10;
+	this->_energy = 10;
+	this->_ad = 0;
+	this->_type = "ClapTrap";
+	this->_maxHp = 10;
+	std::cout << this->getType() << " Copy assignement operator called" << std::endl;
+	return (*this);
+}
+
+int ClapTrap::getHp( void ) const
 {
     return (this->_hp);
 }
 
-int ClapTrap::getEnergy( void )
+int ClapTrap::getEnergy( void ) const
 {
     return (this->_energy);
 }
 
-std::string ClapTrap::getName( void )
+ClapTrap::ClapTrap( const ClapTrap &copy ): _type(copy.getType())
+{
+    std::cout << this->getType() << " " << this->getName() << " copy constructor called" << std::endl;
+}
+
+void ClapTrap::setType( std::string type )
+{
+	this->_type = type;
+}
+
+std::string ClapTrap::getName( void ) const
 {
     return (this->_name);
 }
 
-int ClapTrap::getAd( void )
+void ClapTrap::setMaxHp( int maxHp )
+{
+	this->_maxHp = maxHp;
+}
+
+int ClapTrap::getAd( void ) const
 {
     return (this->_ad);
 }
@@ -45,17 +73,7 @@ void ClapTrap::setAd( int ad )
     this->_ad = ad;
 }
 
-void ClapTrap::setType( std::string type )
-{
-	this->_type = type;
-}
-
-void ClapTrap::setMaxHp( int maxHp )
-{
-	this->_maxHp = maxHp;
-}
-
-int ClapTrap::getMaxHp( void )
+int ClapTrap::getMaxHp( void ) const
 {
 	return (this->_maxHp);
 }
@@ -70,7 +88,7 @@ void ClapTrap::setEnergy( int energy )
     this->_energy = energy;
 }
 
-std::string ClapTrap::getType( void )
+std::string ClapTrap::getType( void ) const
 {
 	return (this->_type);
 }

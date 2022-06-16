@@ -23,6 +23,11 @@ ScavTrap::ScavTrap( std::string newName )
 
 ScavTrap::ScavTrap( const ScavTrap &copy ): ClapTrap(copy)
 {
+    this->setHp(100);
+    this->setAd(20);
+    this->setEnergy(50);
+	this->setType("ScavTrap");
+	this->setMaxHp(100);
     std::cout << this->getType() << " " << this->getName() << " copy constructor called" << std::endl;
 }
 

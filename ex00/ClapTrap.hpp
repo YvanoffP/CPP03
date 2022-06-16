@@ -10,23 +10,27 @@ public:
 
     ClapTrap( void );
     ClapTrap( std::string newName);
-    ~ClapTrap( void );
+	ClapTrap( const ClapTrap &copy);
+    virtual ~ClapTrap( void );
 
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
-    int getHp( void );
-    int getEnergy( void );
-    int getAd( void );
-    std::string getName( void );
-	std::string getType( void );
-	int getMaxHp( void );
+    int getHp( void ) const;
+    int getEnergy( void ) const;
+    int getAd( void ) const;
+    std::string getName( void ) const;
+	std::string getType( void ) const;
+	int getMaxHp( void ) const;
+
+	ClapTrap &operator=( const ClapTrap &rhs );
 
     void setHp( int hp );
     void setEnergy( int energy );
     void setAd( int ad );
     void setName( std::string newName );
+	void setType( std::string type );
 
 
 
