@@ -2,8 +2,10 @@
 # define DIAMONDTRAP_H
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class DiamondTrap: public FragTrap, public ScavTrap {
+class DiamondTrap: public ScavTrap, public FragTrap
+{
 
 public:
     DiamondTrap( void );

@@ -6,6 +6,8 @@ FragTrap::FragTrap( void )
     this->setHp(100);
     this->setAd(30);
     this->setEnergy(100);
+	this->setType( "FragTrap" );
+	this->setMaxHp(100);
 }
 
 FragTrap::FragTrap( std::string newName )
@@ -15,11 +17,13 @@ FragTrap::FragTrap( std::string newName )
     this->setAd(30);
     this->setEnergy(100);
     this->setName( newName );
+	this->setType( "FragTrap" );
+	this->setMaxHp(100);
 }
 
 FragTrap::FragTrap( const FragTrap &copy ): ClapTrap(copy)
 {
-    std::cout << "FragTrap " << this->getName() << " copy constructor called" << std::endl;
+    std::cout << this->getType() << " " << this->getName() << " copy constructor called" << std::endl;
 }
 
 FragTrap::~FragTrap( void )
@@ -31,22 +35,22 @@ void FragTrap::attack( const std::string& target )
 {
     if (this->getEnergy() > 0 && this->getHp() > 0)
     {
-        this->useEnergy();
-        std::cout << "FragTrap " << this->getName() << " attacks "
+        this->_energy--;
+        std::cout << this->getType() << " " << this->getName() << " attacks "
             << target << ", causing " << this->getAd()
-            << " points of damage!" << std::endl;
+            << " points of damage! Whew, must've hurt!" << std::endl;
     }
     else if (getEnergy() == 0)
-        std::cout << "FragTrap " << this ->getName() << " is tired ! No more energy" << std::endl;
+        std::cout << this->getType() << " " << this ->getName() << " is tired ! No more energy" << std::endl;
     else
-        std::cout << "FragTrap " << this->getName() << " is wounded ! No more health" << std::endl;
+        std::cout << this->getType() << " " << this->getName() << " is wounded ! No more health" << std::endl;
 }
 
 void FragTrap::highFivesGuys( void )
 {
     std::string ret;
 
-	std::cout << "FragTrap " << this->getName() << " : High Fives ?" << std::endl;
+	std::cout << this->getType() << " " << this->getName() << " : High Fives ?" << std::endl;
     std::getline(std::cin, ret);
     if (std::cin.eof() || std::cin.bad() || ret.empty() || ret == "no" || ret == "n")
         std::cout << ":'(" << std::endl;

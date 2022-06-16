@@ -1,11 +1,11 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( void ): _hp(10), _energy(10), _ad(0), _type("ClapTrap")
+ClapTrap::ClapTrap( void ): _hp(10), _energy(10), _ad(0), _type("ClapTrap"), _maxHp(10)
 {
     std::cout << "Void constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string newName ): _name(newName),  _hp(10), _energy(10), _ad(0), _type("ClapTrap")
+ClapTrap::ClapTrap( std::string newName ): _name(newName),  _hp(10), _energy(10), _ad(0), _type("ClapTrap"), _maxHp(10)
 {
     std::cout << "Name construcor called" << std::endl;
 }
@@ -40,14 +40,24 @@ void ClapTrap::setHp( int hp )
     this->_hp = hp;
 }
 
+void ClapTrap::setAd( int ad )
+{
+    this->_ad = ad;
+}
+
 void ClapTrap::setType( std::string type )
 {
 	this->_type = type;
 }
 
-void ClapTrap::setAd( int ad )
+void ClapTrap::setMaxHp( int maxHp )
 {
-    this->_ad = ad;
+	this->_maxHp = maxHp;
+}
+
+int ClapTrap::getMaxHp( void )
+{
+	return (this->_maxHp);
 }
 
 void ClapTrap::setName( std::string newName )
@@ -96,12 +106,12 @@ void ClapTrap::takeDamage( unsigned int amount )
 
 void ClapTrap::beRepaired( unsigned int amount )
 {
-    if (this->getHp() < 10)
+    if (this->getHp() < this->getMaxHp())
     {
-        this->_hp = (this->getHp() + (int)amount) > 10 ? 10 : (this->getHp() + (int)amount);
+        this->_hp = (this->getHp() + (int)amount) > this->getMaxHp() ? this->getMaxHp() : (this->getHp() + (int)amount);
         std::cout << this->getType() << " " << this->getName() << " has been repaired for : " << amount << "! His current hp is :"
             << this->getHp() << std::endl;
     }
     else
-        std::cout << this->getType() << " " << this->getName() << " is already at max hp (10) !" << std::endl;
+        std::cout << this->getType() << " " << this->getName() << " is already at max hp (" << this->getMaxHp() << ") !" << std::endl;
 }

@@ -6,6 +6,8 @@ FragTrap::FragTrap( void )
     this->setHp(100);
     this->setAd(30);
     this->setEnergy(100);
+	this->setType( "FragTrap" );
+	this->setMaxHp(100);
 }
 
 FragTrap::FragTrap( std::string newName )
@@ -15,6 +17,8 @@ FragTrap::FragTrap( std::string newName )
     this->setAd(30);
     this->setEnergy(100);
     this->setName( newName );
+	this->setType( "FragTrap" );
+	this->setMaxHp(100);
 }
 
 FragTrap::FragTrap( const FragTrap &copy ): ClapTrap(copy)
@@ -31,7 +35,7 @@ void FragTrap::attack( const std::string& target )
 {
     if (this->getEnergy() > 0 && this->getHp() > 0)
     {
-        this->useEnergy();
+        this->_energy--;
         std::cout << "FragTrap " << this->getName() << " attacks "
             << target << ", causing " << this->getAd()
             << " points of damage! Whew, must've hurt!" << std::endl;

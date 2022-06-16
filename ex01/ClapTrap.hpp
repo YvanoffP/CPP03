@@ -21,12 +21,14 @@ public:
     int getAd( void );
     std::string getName( void );
 	std::string getType( void );
+	int getMaxHp( void );
 
     void setHp( int hp );
     void setEnergy( int energy );
     void setAd( int ad );
     void setName( std::string newName );
 	void setType( std::string type );
+	void setMaxHp( int maxHp );
 
 
 
@@ -37,6 +39,7 @@ protected:
     int _energy;
     int _ad;
 	std::string _type;
+	int _maxHp;
 
 };
 

@@ -9,6 +9,21 @@ int main( void )
 
 	frag.highFivesGuys();
     frag.attack("Le respect");
+	frag.beRepaired(13);
+    frag.attack("Le respect");
+    frag.attack("Le respect");
+    frag.attack("Le respect");
+    frag.attack("Le respect");
+    frag.attack("Le respect");
+    frag.attack("Le respect");
+	frag.takeDamage(10);
+	frag.takeDamage(10);
+	frag.takeDamage(10);
+	frag.beRepaired(13);
+	frag.beRepaired(13);
+	frag.beRepaired(13);
+	frag.beRepaired(13);
+
 
 
 /*	ClapTrap clap("Guit");

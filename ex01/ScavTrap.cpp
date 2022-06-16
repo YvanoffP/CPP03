@@ -7,6 +7,7 @@ ScavTrap::ScavTrap( void )
     this->setAd(20);
     this->setEnergy(50);
 	this->setType("ScavTrap");
+	this->setMaxHp(100);
 }
 
 ScavTrap::ScavTrap( std::string newName )
@@ -17,6 +18,7 @@ ScavTrap::ScavTrap( std::string newName )
     this->setEnergy(50);
     this->setName( newName );
 	this->setType("ScavTrap");
+	this->setMaxHp(100);
 }
 
 ScavTrap::ScavTrap( const ScavTrap &copy ): ClapTrap(copy)

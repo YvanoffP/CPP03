@@ -6,6 +6,8 @@ ScavTrap::ScavTrap( void )
     this->setHp(100);
     this->setAd(20);
     this->setEnergy(50);
+	this->setType("ScavTrap");
+	this->setMaxHp(100);
 }
 
 ScavTrap::ScavTrap( std::string newName )
@@ -15,11 +17,13 @@ ScavTrap::ScavTrap( std::string newName )
     this->setAd(20);
     this->setEnergy(50);
     this->setName( newName );
+	this->setType("ScavTrap");
+	this->setMaxHp(100);
 }
 
 ScavTrap::ScavTrap( const ScavTrap &copy ): ClapTrap(copy)
 {
-    std::cout << "ScavTrap " << this->getName() << " copy constructor called" << std::endl;
+    std::cout << this->getType() << " " << this->getName() << " copy constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap( void )
@@ -31,10 +35,10 @@ void ScavTrap::attack( const std::string& target )
 {
     if (this->getEnergy() > 0 && this->getHp() > 0)
     {
-        this->useEnergy();
+        this->_energy--;
         std::cout << "ScavTrap " << this->getName() << " attacks "
             << target << ", causing " << this->getAd()
-            << " points of damage!" << std::endl;
+            << " points of damage! What a hit !" << std::endl;
     }
     else if (getEnergy() == 0)
         std::cout << "ScavTrap " << this ->getName() << " is tired ! No more energy" << std::endl;
